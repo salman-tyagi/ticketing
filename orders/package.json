@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "start": "tsx watch src/main.ts",
-    "test": "jest --watchAll --no-cache"
+    "test": "jest --watchAll --no-cache",
+    "test:ci": "jest"
   },
   "jest": {
     "preset": "ts-jest",
