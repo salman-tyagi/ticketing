@@ -23,8 +23,10 @@ beforeEach(async () => {
 });
 
 afterAll(async () => {
-  if (mongo) await mongo.stop();
+  // Close the client first — stopping mongod out from under an open
+  // connection makes mongoose hang trying to shut it down.
   await mongoose.connection.close();
+  if (mongo) await mongo.stop();
 });
 
 declare global {
