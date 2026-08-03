@@ -28,6 +28,8 @@ process.on('unhandledRejection', err => {
 
 (async function main() {
   try {
+    console.log('Starting...');
+
     if (!process.env.JWT_KEY) throw Error('JWT KEY must be defined');
     if (!process.env.MONGO_URI) throw Error('MONGO_URI must be defined');
     if (!process.env.RABBITMQ_URL) throw Error('RABBITMQ_URL is not defined');
